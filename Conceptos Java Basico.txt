@@ -1,0 +1,54 @@
+Conceptos:
+	•Variable: Valor que ocupa una porcion de memoria y puede volver a reasignar el valor.
+
+	•Tipos de datos:
+		Entero: int
+		Decimal: double
+		Booleano: Boolean
+		Caracter: char
+		Cadena de caracateres: String
+		Entero largo: long
+
+	•Operador: simbolo especial que le indica al compilador una operacion determinada
+
+	•Condicional if - else (else if): Estructura que nos permite decidir ejecutar como minimo entre 2 bloques de codigo. Enfocado mas que nada a inputs de usuario para valores que no estan definidos
+	
+	•Estructura Switch: Evalua multiples caminos a ejecutar de una sola condicion (muy parecido a if-else if-else). Enfocado en datos que ya estan preestablecidos.
+
+	•Operador terneario: Estructura corta para condiciones simples.
+
+	•Estr. repetitivos: Repite un numero determinado de veces un bloque de codigo segun la condicion, ya sea por contador o centinela
+
+	•While: Ejecuta codigo mientras se cumpla la condicion, la condicion se evalua primero, antes de ejecutar nuevamente el codigo. Ideal para bucle por centinela
+
+	•For: Bucle, evalua la condicion y al final de la ejecucion se itera. Ideal para bucle por contador y recorrer matrices y vectores
+
+	•Arrays: conjunto de datos almacenados y ordenados por indices, en JAVA tienes que declarar la cantidad de espacios en los vectores, ademas de que solo puede almacenar un solo tipo de dato
+	
+	•Vectores: Array unidemencional, puede tener filas o columnas
+
+	•Matrices: Array bidimencional, tiene tanto filas como columnas
+
+	•Modelo de capas: Medelo de desarrollo de software que divide las partes que componen al sistema de software:
+		•(IGU)Interfaz grafica de usuario: Todo aquello que el usuario ve como botones, secciones, paneles, etc. Es la presentacion hacia el usuario (front end).
+		•Logica: Codigo principal de la aplicacion (backend). Incia la persistencia (conexion con la base de datos) y tambien el IGU, siendo un puente entre ellos.
+		•Persistencia: Acceso directo a la base de datos y los administra
+
+	•MVC(Modelo vista controlador): Patron de diseño de software usado para crear interfaces de datos, datos y logica de control.
+
+	•Swing: Es una libreria para desarrollar la interfaz grafica de usuario. Compuesto por 3 partes:
+		•Contenedores Gráficos: Componentes que pueden contener y organizar otros componenentes, como la ventana principal de la aplicacion, dejando un lienso (JFrame). Otro ejemplo es el JPanel que agrupa componentes en su interior
+		•Componentes Gráficos: Elementos visuales que van dentro de los contenedores graficos, como los botones, labels, textfields, listas desplegables, etc.
+		•Eventos: Acciones especificas que suceden al ejecutar el IGU, respondiendo a la interaccion del usuario
+
+
+
+//Datos:
+•Los paquetes se tienen que llamar en minusculaaas
+•Y los archivos para las interfaces graficas se tienen que empezar en mayusculas, ya que son tecnicamente clases y las clases compienzan su nombre en mayusculas.
+•Usar paneles (incluido el JFrame) es importante para distrubuir correctamente en partes todos los elementos dentro y que no se muevan a la par de otros contenedores. Por ejemplo, al agranda o encojer la pantalla hay elementos que se tienen que reorganizar y otros que no.
+•Desde el archivo main es donde se muestra la interfaz grafica (si lo estas llamando correctamente), ya que todo parte desde la lógica.
+•El play verde en los archivos indica que son archivos ejecutables, si trabajamos con modelos de capas el unico ejecutable tiene que ser el archivo main que contiene la logica.		
+•Para retirar el play verde de los archivos del IGU, tienes que irte al source del archivo, ubicar el main y borrarlo por completo.
+•Cada uno de los elementos de los contenedores, Java los trata como si fueran variables	
+	

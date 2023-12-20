@@ -1,0 +1,110 @@
+•BD: Base de datos, son conjuntos de datos agrupadas en un mismo contexto y sistematizados para su posterior uso, su contenido o tematica puede ser diferente pero pueden ralaciones en comun en otros contextos.
+
+•SGBD o DBMS: Sistema Gestores Base de Datos, son las herramientas que nos ayudaran a administrar nuestra base de datos, basicamente a poder ingresar a los datos de mi BD. Pueden ser relacionales (tablas) o no relacionales (clave valor).
+
+•SGBD o DBMS ejemplos: mySQL, MariaDB, postgreSQL, etc. o MongoDB (no relacional).
+
+•DBMS: Data Base Manager System.
+
+•Wam o Xam Server: Son servidores de base de datos y tambien de otras aplicaciones.
+
+•Apache (xampp server): Es el servidor web para la base de datos
+
+•MySQL (xampp server): SGBD a trabajar.
+
+•phpMyAdmin: Interfaz gráfica para manipular datos, tablas y base de datos. Puedes manipular los datos manualmente desde la pestaña de SQL.
+--------------------------------------------------------------------------------------------------------
+
+•tablas: estructura de datos bidimensional que organiza la información en filas y columnas. Esta estructura se asemeja a una matriz, donde cada fila representa un registro o entidad específica, y cada columna representa un atributo o campo asociado con esa entidad.
+	Por ejemplo: Cada fila en la tabla contiene información sobre una instancia particular de la entidad que la tabla representa. Por ejemplo, si tienes una tabla de "Clientes", cada fila podría representar un cliente específico y sus atributos asociados (nombre, dirección, etc.).
+		     Y cada columna en la tabla representa un atributo o campo de la entidad. Siguiendo el ejemplo de la tabla de "Clientes", las columnas podrían incluir atributos como "Nombre", "Dirección", "Correo Electrónico", etc.
+	
+•Abstraccion: Conseguir una representacion logica de situaciones del mundo real.
+
+•Modelado de datos: Recursos proporcionados para conseguir una abstraccion. No tiene un solo modelo, si no varios a considerar y uno de ellos es el DER:
+	
+	•DER: Diagrama Entidad Relacion, se reprensenta por varios elementos:
+		•Entidades: representan cosas o objetos (reales o abstractos), mostrado como rectangulos en los diagramas, ejemplo: Alummnos, libros, autos, sustantivos (por lo general).
+		•Atributos: defininen o identifican caracteristicas propias de una entidad (metadato), por ejemplo la entidad alummno: dni, nombre, apellido, edad, etc. Los atributos pueden ser de differentes tipos de datos (int, double, string, boolean, etc). Son mostrados con ovalos o elipses en diagramas
+		•Relaciones: conexión o asociación entre dos o más tablas. Donde los datos se organizan en tablas y se establecen vínculos entre ellas para representar la relación entre los conjuntos de datos.
+			
+			•"Rombo" que establece el verbo: se hace referencia a la forma en que las relaciones entre las tablas se describen a través de la notación gráfica. Los rombos actuan como "verbos" al describir la naturaleza de la relacion entre las entidades.
+				•Por ejemplo, si tienes dos entidades "Estudiante" y "Curso", y hay una relación entre ellas, el rombo podría estar etiquetado con un "matriculado en" o "toma" para indicar que un estudiante está matriculado en un curso. Aquí, "matriculado en" o "toma" actúa como el "verbo" que describe la relación.
+			
+			•Cardinalidad: escribe la relación numérica entre las filas de una tabla y las filas de otra tabla relacionada mediante una clave foránea.
+				•1 a n (1 a muchos),una entidad esta relacionada a muchas entidades. Una persona puede tener muchos autos y viceversa
+				•1 a 1 una entidad esta relacionada solo a otra entidad. Una persona puede tener 1 solo pasaporte.
+				•N a n muchas entidades estan relacionada a muchas entidades. Muchos estudiantes pueden tener muchos cursos. Estos casos son los mas complejos, teniendo que usarse tablas/herramientas como intermedarios o filtradores
+				•n a 1, muchas entidades pertenecen a una sola entidad. Muchas ordenes pertencen a un solo cliente.
+
+•Tabla: Es basicamente la creacion de una entidad dentro de una base de datos. Fichero en forma de filas (entidad) y columnas (atributos). 
+
+•Primary key: Claves primarias, suele ser un campo o conjunto de campos que actúan como identificador único.
+
+•Foreign Key: Clave foránea(extrangero)Es un campo en una tabla que hace referencia a la clave primaria de otra tabla.
+
+•VARCHAR: Cadena de texto, char es un solo caracter y el varchar indica multiples caracteres, osea un cadena String
+•DATE: fecha, tipo de dato para fechas segun el calendario gregoriano (año, mes y dia).
+
+-----------------------------------------------------------------------------------------------------------------------
+
+•Consultas SQL: Son un conjunto de instrucciones que se usan interactuar con la base de datos (relacional) a traves de un lenguaje.
+	•SELECT (lectura): Indica a que atributo (dato se desea acceder), mejor dicho indica a que columna de fila acceder. SELECT nombres (acceder a los datos de la columna nombres)| SELECT *
+	•FROM : Indica desde que tabla se va a seleccionar dichos datos de columna hechos por SELECT. FROM usuarios_abril (nos ubicamos en la tabla).
+	•WHERE: Indica una condicion sobre los datos y los que coincidan seran seleccionados. No es obligatorio y en caso de no usarse se extrae todos los datos de dicha columna.
+	-------------------------
+	•INSERT INTO: Indica en que tabla se insertara el dato
+	•VALUES: Usado con INSERT INTO, indica que valores se insertaran en la tabla. De acuerdo al orden de las columnas, tendras que ingresar los datos y usa parentesis.
+	--------------------------
+	•UPDATE: Indica a que tabla va a sufrir modificaciones
+	•SET: Usado con UPDATE para indicar el nuevo dato/valor a actualizar, pero antes va la columna en donde esta ese dato. SET apellido = "Romero"
+	•WHERE (opc): Indica la condicion que debe cumplir el dato/valor a modificar y realiza el cambio a las coincidencias. En caso de no usarse va a modificaar a toda la columna de datos, por lo cual es muy recomendado usarlo, con ayuda de una clave primaria para distinguir entre 1 o varios registros. WHERE id_empleado = 3.
+	-------------------------------
+	•DELETE FROM: Especificar a que tabla se eliminaran sus registros
+	•WHERE: Usado con DELETE FROM, si no lo usas borraras todos los registros de la tabla, al igual que con update y set respectivamente.
+	-------------------------------
+	•ORDER BY: Usado con SELECT, FROM y WHERE (opc). Utilizada para especificar por que criterio (desc o asc) se pretende ordenar los "registros" de una tabla
+	•GROUP BY: Usado con SELECT, FROM y WHERE (opc). Utilizada para especificar por que criterio se pretende agrupar los "registros" de una tabla
+	
+
+•Existen lenguajes de alta, baja, modificacion lectura conocidos mejor como ABML, por otro lado estan de  ordenamiento y agrupamiento.
+•ABML: consultas Altas, Bajas, Modificacion y Lectura
+	•Lectura: <SELECT>, FROM y WHERE (OPC), ORDER BY (ordenamiento), GROUP BY(agrupamiento).
+	•Alta: INSERT, VALUES
+	•Modificacion: UPDATE, SET Y WHERE (opc)
+	•Baja: DELETE FROM, WHERE(OPC)
+
+•Funciones complementarias: 
+	•COUNT: Muestra la longitud(cantidad) de registros de una tabla con respecto a la columna elegida. SELECT COUNT(id_user) FROM usuarios_agosto;
+	•MAX: Muestra el valor/dato mas grande de una tabla con respecto a una columna elegida. SELECT MAX(precio) FROM celulares_samsung;
+	•MAX: Muestra el valor/dato mas pequeño de una tabla con respecto a una columna elegida. SELECT MIN(precio) FROM celulares_apple;
+	•AVG(Average/promedio): Muestra el promedio de los registros de una columna (int). SELECT AVG(calificacion) FROM examen_Roberto_Anaya;
+	•SUM: Muestra la suma de los registros de una columna (int) . SELECT SUM(stock) FROM productos;
+	•Estas funciones puedes agregarles un WHERE para calcular solo los datos de tu interes. WHERE marca = "Xiaomi";
+
+----------------------------------------------------------------------------------------------------------
+
+Datos o  temas:
+
+•No te olvides de elegir correctamente el lenguaje español al momento de crear la BD (utf8_spanish_ci)
+•En la resolucion de problemas entidad relacion, identifica primero las entidades (rectangulos)
+•Luego describir los atributos que tiene cada entidad (elipses)
+•Luego buscar la relacion entre cada entidad y determinar cuales son individuales y cuales son muchas. (rombos)
+•Recuerda que entre entidades unas van mejor relacionadas que otras, incluso algunas funcionan como intermediarios con otras entidades, ver ejemplo 9:57 https://www.youtube.com/watch?v=AArIcStS0TU
+
+•En una relacion 1 a "n", comunmente las claves principales van en la tabla "1" y las foraneas en "n".
+•Cuando quieres crear una relacion entre una clave primaria y una foranea, el nombre del primer campo en " Vista de relaciones" es libre, pero de preferencia llamalo como la clave foranea, es decir como la clave primaria.
+
+•Base de datos:
+	•pruebatodocode: creacion de base de datos, de una entidad(tabla) y sus atributos
+	•ejercicioelectro: relaciones, claves primarias y foraneas, cardinalidad (teoria).
+	•emple_deb: consultas SQL, SELECT, FROM, WHERE, INSERT, VALUE, UPDATE, SET, DELETE FROM, ORDER BY, GROUP BY
+	•electronica: COUNT, SUM, MIN, MAX y AVG	
+
+• "*": significa all y sirve en casos de seleccionar todas las resultados de todas las filas, al momento de seleccionarlo.
+•Datos de tipo Date, van con comillas para que no se confunda con numeros. 
+
+
+Ejercicio:
+ordene alfabeticamente la tabla de datos segun el nombre de los usuarios
+Y luego solo muestre los tipos de cargos que existe en la empresa.
